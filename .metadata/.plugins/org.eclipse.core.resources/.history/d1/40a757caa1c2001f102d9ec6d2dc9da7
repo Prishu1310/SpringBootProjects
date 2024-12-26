@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            color: #1a1f36;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+                Helvetica Neue, Ubuntu, sans-serif;
+        }
+
+        body {
+            min-height: 100%;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            letter-spacing: -1px;
+        }
+
+        a {
+            color: #5469d4;
+            text-decoration: unset;
+        }
+
+        .login-root {
+            background: #fff;
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .loginbackground {
+            min-height: 692px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .formbg {
+            margin: 0px auto;
+            width: 100%;
+            max-width: 448px;
+            background: white;
+            border-radius: 4px;
+            box-shadow: rgba(60, 66, 87, 0.12) 0px 7px 14px 0px, rgba(0, 0, 0, 0.12)
+                0px 3px 6px 0px;
+        }
+
+        .field input {
+            font-size: 16px;
+            line-height: 28px;
+            padding: 8px 16px;
+            width: 100%;
+            min-height: 44px;
+            border: unset;
+            border-radius: 4px;
+            outline-color: rgb(84 105 212 / 0.5);
+            background-color: rgb(255, 255, 255);
+            box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px
+                0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.16) 0px
+                0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px
+                0px 0px 0px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(84, 105, 212);
+            box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px
+                0px 0px, rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgb(84, 105, 212) 0px
+                0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px
+                0px 0px 0px, rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .field-checkbox input {
+            width: 20px;
+            height: 15px;
+            margin-right: 5px;
+            box-shadow: unset;
+            min-height: unset;
+        }
+
+        .field-checkbox label {
+            display: flex;
+            align-items: center;
+            margin: 0;
+        }
+
+        .footer-link span {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .field p {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="login-root">
+    <div class="box-root flex-flex flex-direction--column"
+         style="min-height: 100vh; flex-grow: 1">
+        <div class="loginbackground box-background--white padding-top--64">
+            <div class="loginbackground-gridContainer">
+                <div class="box-root flex-flex" style="grid-area: top/start/8/end;">
+                    <div class="box-root"
+                         style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div
+            class="box-root padding-top--24 flex-flex flex-direction--column"
+            style="flex-grow: 1; z-index: 9;">
+            <div
+                class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+                <h2 class="padding-bottom--15" style="text-align: center">Product Information</h2>
+            </div>
+            <div class="formbg-outer">
+                <div class="formbg">
+                    <div class="formbg-inner padding-horizontal--48">
+
+                        <form id="stripe-login" th:action="@{/saveProduct}" th:object="${productModel}" method="post">
+                            <!-- Product Name -->
+                            <div class="field padding-bottom--24">
+                                <label for="name">Product Name</label>
+                                <input type="text" th:value="*{name}" name="name" id="name">
+                                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+                            </div>
+
+                            <!-- Product Brand -->
+                            <div class="field padding-bottom--24">
+                                <label for="brand">Product Brand</label>
+                                <input type="text" th:value="*{brand}" name="brand" id="brand">
+                                <p th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}"></p>
+                            </div>
+
+                            <!-- Product MadeIn -->
+                            <div class="field padding-bottom--24">
+                                <label for="madeIn">Product MadeIn</label>
+                                <input type="text" th:value="*{madeIn}" name="madeIn" id="madeIn">
+                                <p th:if="${#fields.hasErrors('madeIn')}" th:errors="*{madeIn}"></p>
+                            </div>
+
+                            <!-- Product Price -->
+                            <div class="field padding-bottom--24">
+                                <label for="price">Product Price</label>
+                                <input th:value="*{price}" type="number" name="price" id="price">
+                                <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
+                            </div>
+
+                            <!-- Product Quantity -->
+                            <div class="field padding-bottom--24">
+                                <label for="quantity">Product Quantity</label>
+                                <input type="number" name="quantity" th:value="*{quantity}" id="quantity">
+                                <p th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></p>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="field padding-bottom--24">
+                                <input type="submit" name="submit" value="Submit">
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

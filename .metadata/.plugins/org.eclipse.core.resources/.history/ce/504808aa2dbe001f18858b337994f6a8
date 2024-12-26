@@ -1,0 +1,5 @@
+package com.springbootmvc.empEntity;
+
+public class EmployeeEntity {
+
+}

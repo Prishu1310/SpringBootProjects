@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Product Company</title>
+  <style>
+  /* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
+header {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 20px 0;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* About Us Section */
+.about-us {
+  background-color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.about-us h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-us p, .about-us h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.about-us ul {
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.about-us ul li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Contact Section */
+.contact {
+  background-color: #ecf0f1;
+  padding: 40px 0;
+}
+
+.contact h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+form input, form textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+form button:hover {
+  background-color: #34495e;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+  
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1>About Us</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Us Section -->
+  <section class="about-us">
+    <div class="container">
+      <h2>Welcome to Our Company</h2>
+      <p>We are a leading provider of innovative products designed to improve your lifestyle. Our team is committed to creating products that are reliable, affordable, and effective.</p>
+
+      <h3>Our Mission</h3>
+      <p>Our mission is to enhance the daily lives of our customers by offering high-quality products that make everyday tasks easier, more efficient, and enjoyable.</p>
+
+      <h3>Our Values</h3>
+      <ul>
+        <li>Innovation</li>
+        <li>Quality</li>
+        <li>Customer Satisfaction</li>
+        <li>Sustainability</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="container">
+      <h3>Contact Us</h3>
+      <form action="#" method="post">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Enter your message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Product Company. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
